@@ -11,29 +11,27 @@ trait LastCalls extends Prefs {
 
     def maxMilliseconds = minutesCount(context) * 60000
 
-    def expired =
+    def hasExpired =
       (new Date).getTime - date.getTime > maxMilliseconds
 
   }
 
-  private var lastCalls: List[Call] = List()
+  private var lastCalls: List[Call] = Nil
 
-  private def cleanupList = {
-    lastCalls = lastCalls.filter(!_.expired)
-  }
+  private def cleanupList =
+    lastCalls = lastCalls.filter(!_.hasExpired)
 
   private def rememberCall(c: Call) = {
     cleanupList
     lastCalls ::= c
   }
 
-  def resetCalls = {
-    lastCalls = List()
-  }
+  def resetCalls =
+    lastCalls = Nil
 
   // Return true if the maximum number of calls has been reached with
   // the current one. It does not record the call.
-  def checkIncomingCall(number: String): Boolean = {
+  def shouldBeSignaled(number: String): Boolean = {
     cleanupList
     lastCalls.count(_.number == number) >= callCount(context) - 1
   }

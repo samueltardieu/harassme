@@ -13,7 +13,7 @@ extends CallStatus with LastCalls with Ringer {
     val ringerMode = getRingerMode
     if (ringerMode != AudioManager.RINGER_MODE_NORMAL &&
 	incomingNumber != "" &&
-	checkIncomingCall(incomingNumber))
+	shouldBeSignaled(incomingNumber))
       ringPhone(ringerMode)
   }
 

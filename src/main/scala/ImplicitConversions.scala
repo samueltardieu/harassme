@@ -9,7 +9,7 @@ object ImplicitConversions {
     new Preference.OnPreferenceChangeListener {
       override def onPreferenceChange(preference : Preference,
 				      newValue : Object) = {
-	f.apply(newValue)
+	f(newValue)
 	true
       }
     }
