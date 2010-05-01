@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HarassMe</string>
+    <string name="service_startup">HarassMe service activated</string>
+    <string name="service_stop">HarassMe service stopped</string>
+
+    <string-array name="volume_id">
+      <item>25 %</item>
+      <item>50 %</item>
+      <item>75 %</item>
+      <item>100 %</item>
+    </string-array>
+
+    <string-array name="volume_value">
+      <item>25</item>
+      <item>50</item>
+      <item>75</item>
+      <item>100</item>
+    </string-array>
+
+    <string name="activate_service">Activate service</string>
+    <string name="service_on">The service will watch incoming calls</string>
+    <string name="service_off">The service will not run</string>
+    <string name="service_parameters">Service parameters</string>
+    <string name="volume">Volume</string>
+    <string name="volume_summary">Percentage of the maximum volume</string>
+    <string name="callcount">Number of calls</string>
+    <string name="callcount_summary">The service will not trigger before
+      this number of calls</string>
+    <string name="minutescount">Max minutes</string>
+    <string name="minutescount_summary">Maximum delay in minutes between
+      the first and latest call</string>
+
+</resources>

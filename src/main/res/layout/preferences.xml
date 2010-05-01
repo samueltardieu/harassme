@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:key="main_preferencescreen">
+  <CheckBoxPreference
+     android:key="serviceactivated"
+     android:title="@string/activate_service"
+     android:summaryOn="@string/service_on"
+     android:summaryOff="@string/service_off" />
+  <PreferenceCategory android:title="@string/service_parameters">
+  <EditTextPreference
+     android:key="callcount"
+     android:dependency="serviceactivated"
+     android:title="@string/callcount"
+     android:summary="@string/callcount_summary"
+     android:numeric="integer"
+     android:maxLength="2"
+     android:defaultValue="3" />
+  <EditTextPreference
+     android:key="minutescount"
+     android:dependency="serviceactivated"
+     android:title="@string/minutescount"
+     android:summary="@string/minutescount_summary"
+     android:numeric="integer"
+     android:maxLength="2"
+     android:defaultValue="3" />
+  <ListPreference
+     android:key="servicevolume"
+     android:dependency="serviceactivated"
+     android:defaultValue="75"
+     android:title="@string/volume"
+     android:summary="@string/volume_summary"
+     android:entries="@array/volume_id"
+     android:entryValues="@array/volume_value" />
+  </PreferenceCategory>
+</PreferenceScreen> 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="service_startup">Service HarassMe démarré</string>
+    <string name="service_stop">Service HarassMe stoppé</string>
+
+    <string name="activate_service">Activer le service</string>
+    <string name="service_on">Surveillance des appels entrants activée</string>
+    <string name="service_off">Service stoppé</string>
+    <string name="service_parameters">Paramètres du service</string>
+    <string name="volume">Volume</string>
+    <string name="volume_summary">Pourcentage du volume maximum</string>
+    <string name="callcount">Nombre d'appels</string>
+    <string name="callcount_summary">Le service ne se déclenchera pas avant
+      ce nombre d'appels</string>
+    <string name="minutescount">Minutes max</string>
+    <string name="minutescount_summary">Délai maximum entre le premier
+      et le dernier appel</string>
+
+</resources>

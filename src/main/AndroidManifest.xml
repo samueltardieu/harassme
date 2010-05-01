@@ -1,0 +1,27 @@
+<manifest 
+android:versionName="0.1" android:versionCode="1" package="net.rfc1149.harassme" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="4"></uses-sdk>
+
+    <!-- Clipart comes from http://www.fotosearch.com/clip-art/phone_4.html -->
+    <application android:icon="@drawable/app_icon" android:label="@string/app_name">
+
+        <activity android:label="@string/app_name" android:name=".PrefsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+
+	<service android:name=".Watcher"/>
+
+	<receiver android:name=".AutoStarter">
+          <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED"/>
+          </intent-filter>
+        </receiver>
+
+    </application>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+</manifest>
