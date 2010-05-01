@@ -9,7 +9,7 @@
     <string name="service_parameters">Paramètres du service</string>
     <string name="volume">Volume</string>
     <string name="volume_summary">Pourcentage du volume maximum</string>
-    <string name="callcount">Nombre d'appels</string>
+    <string name="callcount">Nombre d’appels</string>
     <string name="callcount_summary">Le service ne se déclenchera pas avant
       ce nombre d'appels</string>
     <string name="minutescount">Minutes max</string>
