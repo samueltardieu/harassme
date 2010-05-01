@@ -1,5 +1,5 @@
 <manifest 
-android:versionName="0.2" android:versionCode="2" package="net.rfc1149.harassme" xmlns:android="http://schemas.android.com/apk/res/android">
+android:versionName="0.3" android:versionCode="3" package="net.rfc1149.harassme" xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-sdk android:minSdkVersion="4"></uses-sdk>
 
     <!-- Clipart comes from http://www.fotosearch.com/clip-art/phone_4.html -->
