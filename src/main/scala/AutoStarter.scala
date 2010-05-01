@@ -6,7 +6,7 @@ class AutoStarter extends BroadcastReceiver with Prefs {
 
   override def onReceive(context: Context, intent: Intent) = {
     if (serviceActivated(context))
-      Watcher.startService(context)
+      HarassMeService.startService(context)
   }
 
 }

@@ -4,10 +4,12 @@ import _root_.android.app.Service
 import _root_.android.content.{Context, Intent}
 import _root_.android.telephony.{PhoneStateListener, TelephonyManager}
 
-class Watcher extends Service {
+class HarassMeService extends Service {
 
-  private var telephonyManager: TelephonyManager = null
-  private var listener: PhoneStateListener = null
+  private lazy val telephonyManager =
+    getSystemService(Context.TELEPHONY_SERVICE).asInstanceOf[TelephonyManager]
+
+  private lazy val listener = new HarassMeListener(this)
 
   override def onBind(intent: Intent) = {
     // Do nothing as the service is not designed to be bound
@@ -16,9 +18,6 @@ class Watcher extends Service {
 
   override def onCreate() {
     super.onCreate
-    telephonyManager =
-      getSystemService(Context.TELEPHONY_SERVICE).asInstanceOf[TelephonyManager]
-    listener = new HarassListener(this)
     telephonyManager.listen(listener, PhoneStateListener.LISTEN_CALL_STATE)
   }
 
@@ -29,12 +28,12 @@ class Watcher extends Service {
 
 }
 
-object Watcher {
+object HarassMeService {
 
   private var serviceStarted : Boolean = false
 
   private def intent(context: Context) =
-    new Intent(context, classOf[Watcher])
+    new Intent(context, classOf[HarassMeService])
 
   def startService(context: Context) = {
     context.startService(intent(context))
