@@ -18,7 +18,7 @@ trait Ringer extends Prefs {
   def ringPhone(ringerMode : Int) = {
     previousMode = Some(ringerMode)
     previousVolume =
-      audioManager.getStreamVolume(AudioManager.RINGER_MODE_NORMAL)
+      audioManager.getStreamVolume(AudioManager.STREAM_RING)
     audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL)
     val newVolume : Int = maxVolume * volume(context) / 100
     audioManager.setStreamVolume(AudioManager.STREAM_RING, newVolume, 0)
