@@ -26,7 +26,7 @@
      android:maxLength="2"
      android:defaultValue="3" />
   <ListPreference
-     android:key="servicevolume"
+     android:key="volume"
      android:dependency="serviceactivated"
      android:defaultValue="75"
      android:title="@string/volume"
