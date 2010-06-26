@@ -10,11 +10,9 @@ extends CallStatus with LastCalls with Ringer {
     resetCalls
 
   override def onRing(incomingNumber: String) = {
-    val ringerMode = getRingerMode
-    if (ringerMode != AudioManager.RINGER_MODE_NORMAL &&
-	incomingNumber != "" &&
+    if (incomingNumber != "" &&
 	shouldBeSignaled(incomingNumber))
-      ringPhone(ringerMode)
+      ringPhone
   }
 
   override def onMissedCall(incomingNumber: String) = {
