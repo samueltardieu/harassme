@@ -2,15 +2,15 @@ package net.rfc1149.harassme
 
 import _root_.android.content.Context
 import _root_.android.media.AudioManager
+import _root_.android.media.AudioManager._
 
 trait Ringer extends Prefs {
 
-  protected class RingerMode (val mode: Int, val volume: Int) extends Ordered[RingerMode] {
+  case class RingerMode (val mode: Int, val volume: Int) extends Ordered[RingerMode] {
 
     // RingerMode implements "audible" comparaison. If one mode is greater than the other,
-    // it means that it has a better chance to be heard.
-
-    import AudioManager._
+    // it means that it has a better chance to be heard. The volume has no significance
+    // when the mode is not the normal one.
 
     def compare(other: RingerMode) =
       if (mode == other.mode) {
@@ -33,13 +33,17 @@ trait Ringer extends Prefs {
   private val audioManager =
     context.getSystemService(Context.AUDIO_SERVICE).asInstanceOf[AudioManager]
   private val maxVolume =
-    audioManager.getStreamMaxVolume(AudioManager.STREAM_RING)
+    audioManager.getStreamMaxVolume(STREAM_RING)
 
   private var previousSettings: Option[RingerMode] = None
 
   def ringPhone = {
     val currentSettings = getSettings
-    val newSettings = new RingerMode(AudioManager.RINGER_MODE_NORMAL, maxVolume * volume(context) / 100)
+    val wantedVolume = volume(context)
+    val newSettings = if (wantedVolume == 0)
+			new RingerMode(RINGER_MODE_VIBRATE, 0)
+		      else
+			new RingerMode(RINGER_MODE_NORMAL, maxVolume * volume(context) / 100)
     if (newSettings > currentSettings) {
       previousSettings = Some(currentSettings)
       installSettings(newSettings)
@@ -51,12 +55,15 @@ trait Ringer extends Prefs {
     previousSettings = None
   }
 
-  def getSettings: RingerMode =
-    new RingerMode(audioManager.getRingerMode, audioManager.getStreamVolume(AudioManager.STREAM_RING))
+  def getSettings: RingerMode = {
+    val mode = audioManager.getRingerMode
+    RingerMode(mode, if (mode == RINGER_MODE_NORMAL) audioManager.getStreamVolume(STREAM_RING) else 0)
+  }
 
   def installSettings(settings: RingerMode) = {
     audioManager.setRingerMode(settings.mode)
-    audioManager.setStreamVolume(AudioManager.STREAM_RING, settings.volume, 0)
+    if (settings.mode == RINGER_MODE_NORMAL)
+      audioManager.setStreamVolume(STREAM_RING, settings.volume, 0)
   }
 
 }

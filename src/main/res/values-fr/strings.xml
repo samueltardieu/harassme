@@ -3,6 +3,14 @@
     <string name="service_startup">Service HarassMe démarré</string>
     <string name="service_stop">Service HarassMe stoppé</string>
 
+    <string-array name="volume_id">
+      <item>Vibreur uniquement</item>
+      <item>25 %</item>
+      <item>50 %</item>
+      <item>75 %</item>
+      <item>100 %</item>
+    </string-array>
+
     <string name="activate_service">Activer le service</string>
     <string name="service_on">Surveillance des appels entrants activée</string>
     <string name="service_off">Service stoppé</string>

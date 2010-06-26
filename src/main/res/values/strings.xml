@@ -5,6 +5,7 @@
     <string name="service_stop">HarassMe service stopped</string>
 
     <string-array name="volume_id">
+      <item>Vibrate only</item>
       <item>25 %</item>
       <item>50 %</item>
       <item>75 %</item>
@@ -12,6 +13,7 @@
     </string-array>
 
     <string-array name="volume_value">
+      <item>0</item>
       <item>25</item>
       <item>50</item>
       <item>75</item>
