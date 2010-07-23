@@ -15,9 +15,6 @@ class HarassMe(info: ProjectInfo) extends ParentProject(info) {
     val keyalias = "rfc1149"
 
     val scalatest = "org.scalatest" % "scalatest" % "1.0" % "test"
-
-    // Prevent AutoStarter from being stripped down by Proguard
-    override def proguardOption = "-keep public class net.rfc1149.harassme.AutoStarter"
   }
 
   class TestProject(info: ProjectInfo) extends AndroidTestProject(info) with Defaults
