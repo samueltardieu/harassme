@@ -1,7 +1,7 @@
 import sbt._
 
 trait Defaults {
-  def androidPlatformName = "android-4"
+  def androidPlatformName = "android-8"
 }
 class HarassMe(info: ProjectInfo) extends ParentProject(info) {
   override def shouldCheckOutputDirectories = false
