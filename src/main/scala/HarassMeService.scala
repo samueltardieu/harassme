@@ -28,20 +28,24 @@ class HarassMeService extends Service {
 
 }
 
-object HarassMeService {
+object HarassMeService extends Prefs {
 
   private var serviceStarted : Boolean = false
 
   private def intent(context: Context) =
     new Intent(context, classOf[HarassMeService])
 
+  // Start service if it is activated and has not been started yet.
   def startService(context: Context) = {
-    context.startService(intent(context))
+    if (serviceActivated(context) && !serviceStarted)
+      context.startService(intent(context))
     serviceStarted = true
   }
 
+  // Stop service if it has been started.
   def stopService(context: Context) = {
-    context.stopService(intent(context))
+    if (serviceStarted)
+      context.stopService(intent(context))
     serviceStarted = false
   }
 
