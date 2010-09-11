@@ -17,6 +17,7 @@ class HarassMeService extends Service {
   }
 
   override def onCreate() {
+    HarassMeService.serviceStarted = true
     super.onCreate
     telephonyManager.listen(listener, PhoneStateListener.LISTEN_CALL_STATE)
   }
@@ -24,6 +25,7 @@ class HarassMeService extends Service {
   override def onDestroy() {
     super.onDestroy
     telephonyManager.listen(listener, 0)
+    HarassMeService.serviceStarted = false
   }
 
 }
@@ -36,18 +38,14 @@ object HarassMeService extends Prefs {
     new Intent(context, classOf[HarassMeService])
 
   // Start service if it is activated and has not been started yet.
-  def startService(context: Context) = {
+  def startService(context: Context) =
     if (serviceActivated(context) && !serviceStarted)
       context.startService(intent(context))
-    serviceStarted = true
-  }
 
   // Stop service if it has been started.
-  def stopService(context: Context) = {
+  def stopService(context: Context) =
     if (serviceStarted)
       context.stopService(intent(context))
-    serviceStarted = false
-  }
 
   def serviceRunning = serviceStarted
 
