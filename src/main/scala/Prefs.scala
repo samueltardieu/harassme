@@ -14,12 +14,22 @@ trait Prefs {
     sp(context).getBoolean("serviceactivated", false)
 
   def callCount(context: Context) =
-    sp(context).getString("callcount", "3").toInt
+    Prefs.makeInt(sp(context).getString("callcount", ""), 3)
 
   def minutesCount(context: Context) =
-    sp(context).getString("minutescount", "3").toInt
+    Prefs.makeInt(sp(context).getString("minutescount", ""), 3)
 
   def volume(context: Context) =
     sp(context).getString("volume", "75").toInt
+
+}
+
+object Prefs {
+
+  def makeInt(s: String, default: Int) =
+    if (s == "")
+      default
+    else
+      s.toInt
 
 }
