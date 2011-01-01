@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">HarassMe</string>
-    <string name="service_startup">HarassMe service activated</string>
-    <string name="service_stop">HarassMe service stopped</string>
+    <string name="app_name">Harass Me</string>
+    <string name="service_startup">Harass Me service activated</string>
+    <string name="service_stop">Harass Me service stopped</string>
 
     <string-array name="volume_id">
       <item>Vibrate only</item>

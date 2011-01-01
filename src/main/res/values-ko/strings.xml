@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Translation provided by Ubinuri -->
 <resources>
-    <string name="app_name">HarassMe</string>
-    <string name="service_startup">HarassMe 서비스 활성화됨</string>
-    <string name="service_stop">HarassMe 서비스 중지됨</string>
+    <string name="service_startup">Harass Me 서비스 활성화됨</string>
+    <string name="service_stop">Harass Me 서비스 중지됨</string>
 
     <string-array name="volume_id">
       <item>진동전용</item>

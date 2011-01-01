@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="service_startup">Service HarassMe démarré</string>
-    <string name="service_stop">Service HarassMe stoppé</string>
+    <string name="service_startup">Service Harass Me démarré</string>
+    <string name="service_stop">Service Harass Me stoppé</string>
 
     <string-array name="volume_id">
       <item>Vibreur uniquement</item>
