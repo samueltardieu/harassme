@@ -7,6 +7,7 @@ class HarassMeListener (val context: Context)
 extends CallStatus with LastCalls with Ringer {
 
   override def onAnswer(incomingNumber: String) =
+    unringPhone
     resetCalls
 
   override def onRing(incomingNumber: String) = {
