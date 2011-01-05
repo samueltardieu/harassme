@@ -3,29 +3,10 @@
 <resources>
     <string name="service_startup">Harass Me 서비스 활성화됨</string>
     <string name="service_stop">Harass Me 서비스 중지됨</string>
-
-    <string-array name="volume_id">
-      <item>진동전용</item>
-      <item>25 %</item>
-      <item>50 %</item>
-      <item>75 %</item>
-      <item>100 %</item>
-    </string-array>
-
-    <string-array name="volume_value">
-      <item>0</item>
-      <item>25</item>
-      <item>50</item>
-      <item>75</item>
-      <item>100</item>
-    </string-array>
-
     <string name="activate_service">서비스 활성화</string>
     <string name="service_on">이 서비스는 걸려오는 전화를 감시합니다.</string>
     <string name="service_off">이 서비스는 실행되지 않습니다.</string>
     <string name="service_parameters">서비스 매개 변수</string>
-    <string name="volume">볼륨</string>
-    <string name="volume_summary">최대 볼륨 비율</string>
     <string name="callcount">통화 수</string>
     <string name="callcount_summary">이 통화수 이전에는 서비스가 실행되지 않습니다.</string>
     <string name="minutescount">최대 시간(분)</string>

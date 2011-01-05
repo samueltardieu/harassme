@@ -25,13 +25,5 @@
      android:numeric="integer"
      android:maxLength="2"
      android:defaultValue="3" />
-  <ListPreference
-     android:key="volume"
-     android:dependency="serviceactivated"
-     android:defaultValue="75"
-     android:title="@string/volume"
-     android:summary="@string/volume_summary"
-     android:entries="@array/volume_id"
-     android:entryValues="@array/volume_value" />
   </PreferenceCategory>
 </PreferenceScreen> 

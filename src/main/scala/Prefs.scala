@@ -19,9 +19,6 @@ trait Prefs {
   def minutesCount(context: Context) =
     Prefs.makeInt(sp(context).getString("minutescount", ""), 3)
 
-  def volume(context: Context) =
-    sp(context).getString("volume", "75").toInt
-
 }
 
 object Prefs {
