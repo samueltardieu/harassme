@@ -50,7 +50,7 @@ trait Ringer extends Prefs {
     }
   }
 
-  def restoreRingerMode = {
+  def unringPhone = {
     previousSettings foreach installSettings
     previousSettings = None
   }

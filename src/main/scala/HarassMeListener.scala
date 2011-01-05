@@ -16,7 +16,7 @@ extends CallStatus with LastCalls with Ringer {
   }
 
   override def onMissedCall(incomingNumber: String) = {
-    restoreRingerMode
+    unringPhone
     if (incomingNumber != "")
       recordMissedCall(incomingNumber)
   }
