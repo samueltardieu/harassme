@@ -3,6 +3,7 @@ import sbt._
 trait Defaults {
   def androidPlatformName = "android-11"
 }
+
 class HarassMe(info: ProjectInfo) extends ParentProject(info) {
   override def shouldCheckOutputDirectories = false
   override def updateAction = task { None } 
@@ -14,7 +15,6 @@ class HarassMe(info: ProjectInfo) extends ParentProject(info) {
 
     val keyalias = "rfc1149"
 
-    val scalatest = "org.scalatest" % "scalatest" % "1.0" % "test"
   }
 
   class TestProject(info: ProjectInfo) extends AndroidTestProject(info) with Defaults
