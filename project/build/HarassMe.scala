@@ -15,6 +15,8 @@ class HarassMe(info: ProjectInfo) extends ParentProject(info) {
 
     val keyalias = "rfc1149"
 
+    override def proguardOption =
+      "-keep public class scala.Function1 " + super.proguardOption
   }
 
   class TestProject(info: ProjectInfo) extends AndroidTestProject(info) with Defaults
