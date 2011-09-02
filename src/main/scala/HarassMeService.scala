@@ -38,8 +38,8 @@ object HarassMeService extends Prefs {
     new Intent(context, classOf[HarassMeService])
 
   // Start service if it is activated and has not been started yet.
-  def startService(context: Context) =
-    if (serviceActivated(context) && !serviceStarted)
+  def startService(context: Context, force: Boolean = false) =
+    if ((serviceActivated(context) || force) && !serviceStarted)
       context.startService(intent(context))
 
   // Stop service if it has been started.
