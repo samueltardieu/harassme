@@ -4,11 +4,19 @@ import _root_.android.app.backup.{BackupAgentHelper, SharedPreferencesBackupHelp
 
 class HarassMeBackupAgent extends BackupAgentHelper {
 
+  import HarassMeBackupAgent._
+
+  override def onCreate(): Unit =
+    addHelper(PREFS_BACKUP_KEY,
+              new SharedPreferencesBackupHelper(this, PREFS_NAME))
+
+}
+
+object HarassMeBackupAgent {
+
   // This is the name of the shared preferences file.
   val PREFS_NAME = "net.rfc1149.harassme_preferences"
 
-  override def onCreate(): Unit =
-    addHelper("prefs",
-              new SharedPreferencesBackupHelper(this, PREFS_NAME))
+  val PREFS_BACKUP_KEY = "prefs"
 
 }
