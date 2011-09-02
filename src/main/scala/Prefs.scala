@@ -11,7 +11,7 @@ trait Prefs {
     PreferenceManager.getDefaultSharedPreferences(context)
 
   def serviceActivated(context: Context) =
-    sp(context).getBoolean("serviceactivated", false)
+    sp(context).getBoolean("serviceactivated", true)
 
   def callCount(context: Context) =
     sp(context).getString("callcount", "3").toInt
