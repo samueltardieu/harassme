@@ -1,6 +1,6 @@
 <manifest
-   android:versionName="1.7"
-   android:versionCode="17"
+   android:versionName="1.8"
+   android:versionCode="18"
    package="net.rfc1149.harassme"
    xmlns:android="http://schemas.android.com/apk/res/android"
    android:installLocation="internalOnly"
