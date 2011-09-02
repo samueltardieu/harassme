@@ -13,7 +13,7 @@ class PrefsActivity extends PreferenceActivity with Notification with Prefs {
   def startService: Unit = {
     if (!HarassMeService.serviceRunning)
       short_toast(R.string.service_startup)
-    HarassMeService.startService(this, true)
+    HarassMeService.startService(this)
   }
 
   def stopService: Unit = {
