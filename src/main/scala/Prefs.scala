@@ -14,19 +14,9 @@ trait Prefs {
     sp(context).getBoolean("serviceactivated", false)
 
   def callCount(context: Context) =
-    Prefs.makeInt(sp(context).getString("callcount", ""), 3)
+    sp(context).getString("callcount", "3").toInt
 
   def minutesCount(context: Context) =
-    Prefs.makeInt(sp(context).getString("minutescount", ""), 3)
-
-}
-
-object Prefs {
-
-  def makeInt(s: String, default: Int) =
-    if (s == "")
-      default
-    else
-      s.toInt
+    sp(context).getString("minutescount", "3").toInt
 
 }
