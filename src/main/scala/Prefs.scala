@@ -20,7 +20,9 @@ trait Prefs {
 
 object Prefs {
 
-  val name = "net.rfc1149.harassme_preferences"
+  val appli = "net.rfc1149.harassme"
+
+  val name = appli + "_preferences"
 
   val backupKey = "prefs"
 
