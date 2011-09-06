@@ -1,14 +1,11 @@
 package net.rfc1149.harassme
 
-import _root_.android.app.Activity
 import _root_.android.content.Context
-import _root_.android.content.SharedPreferences
-import _root_.android.preference.PreferenceManager
 
 trait Prefs {
 
   private def sp(context: Context) =
-    PreferenceManager.getDefaultSharedPreferences(context)
+    context.getSharedPreferences(Prefs.name, Context.MODE_PRIVATE)
 
   def serviceActivated(context: Context) =
     sp(context).getBoolean("serviceactivated", true)
@@ -18,5 +15,13 @@ trait Prefs {
 
   def minutesCount(context: Context) =
     sp(context).getString("minutescount", "3").toInt
+
+}
+
+object Prefs {
+
+  val name = "net.rfc1149.harassme_preferences"
+
+  val backupKey = "prefs"
 
 }
