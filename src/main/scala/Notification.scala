@@ -1,7 +1,7 @@
 package net.rfc1149.harassme
 
-import _root_.android.content.Context
-import _root_.android.widget.Toast
+import android.content.Context
+import android.widget.Toast
 
 trait Notification { self: Context =>
 

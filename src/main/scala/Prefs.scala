@@ -1,6 +1,6 @@
 package net.rfc1149.harassme
 
-import _root_.android.content.Context
+import android.content.Context
 
 trait Prefs {
 

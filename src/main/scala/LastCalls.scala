@@ -1,6 +1,6 @@
 package net.rfc1149.harassme
 
-import _root_.android.content.Context
+import android.content.Context
 import java.util.Date
 
 trait LastCalls extends Prefs {

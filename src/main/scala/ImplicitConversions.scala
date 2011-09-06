@@ -1,6 +1,6 @@
 package net.rfc1149.harassme
 
-import _root_.android.preference._
+import android.preference._
 
 object ImplicitConversions {
 

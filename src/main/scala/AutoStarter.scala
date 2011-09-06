@@ -1,6 +1,6 @@
 package net.rfc1149.harassme
 
-import _root_.android.content._
+import android.content._
 
 class AutoStarter extends BroadcastReceiver with Prefs {
 

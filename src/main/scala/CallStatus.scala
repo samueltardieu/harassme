@@ -1,6 +1,6 @@
 package net.rfc1149.harassme
 
-import _root_.android.telephony.{PhoneStateListener, TelephonyManager}
+import android.telephony.{PhoneStateListener, TelephonyManager}
 
 class CallStatus extends PhoneStateListener {
 
@@ -21,7 +21,7 @@ class CallStatus extends PhoneStateListener {
   protected def onMissedCall(incomingNumber: String) = {}
 
   override def onCallStateChanged(state: Int, phoneNumber: String) {
-    import _root_.android.telephony.TelephonyManager._
+    import android.telephony.TelephonyManager._
     (previousState, state) match {
       case (CALL_STATE_IDLE, CALL_STATE_RINGING) =>
 	onRing(phoneNumber)

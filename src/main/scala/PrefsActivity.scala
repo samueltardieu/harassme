@@ -1,10 +1,10 @@
 package net.rfc1149.harassme
  
-import _root_.android.content.{Context, Intent, SharedPreferences}
-import _root_.android.os.Bundle
-import _root_.android.preference._
-import _root_.android.view.View
-import _root_.android.widget.Toast
+import android.content.{Context, Intent, SharedPreferences}
+import android.os.Bundle
+import android.preference._
+import android.view.View
+import android.widget.Toast
 
 import ImplicitConversions._
 

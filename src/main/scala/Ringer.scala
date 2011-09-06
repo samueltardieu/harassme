@@ -1,9 +1,9 @@
 package net.rfc1149.harassme
 
-import _root_.android.content.Context
-import _root_.android.media.{AudioManager, Ringtone, RingtoneManager}
-import _root_.android.media.AudioManager.{RINGER_MODE_NORMAL, STREAM_ALARM, STREAM_RING}
-import _root_.android.provider.Settings.System.DEFAULT_RINGTONE_URI
+import android.content.Context
+import android.media.{AudioManager, Ringtone, RingtoneManager}
+import android.media.AudioManager.{RINGER_MODE_NORMAL, STREAM_ALARM, STREAM_RING}
+import android.provider.Settings.System.DEFAULT_RINGTONE_URI
 
 trait Ringer extends Prefs {
 

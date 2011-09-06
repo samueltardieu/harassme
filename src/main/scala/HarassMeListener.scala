@@ -1,7 +1,7 @@
 package net.rfc1149.harassme
 
-import _root_.android.content.Context
-import _root_.android.media.AudioManager
+import android.content.Context
+import android.media.AudioManager
 
 class HarassMeListener (val context: Context)
 extends CallStatus with LastCalls with Ringer {

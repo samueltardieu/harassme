@@ -1,8 +1,8 @@
 package net.rfc1149.harassme
 
-import _root_.android.app.Service
-import _root_.android.content.{Context, Intent}
-import _root_.android.telephony.{PhoneStateListener, TelephonyManager}
+import android.app.Service
+import android.content.{Context, Intent}
+import android.telephony.{PhoneStateListener, TelephonyManager}
 
 class HarassMeService extends Service {
 
