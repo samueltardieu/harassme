@@ -37,7 +37,7 @@ object HarassMeService {
   private def intent(context: Context) =
     new Intent(context, classOf[HarassMeService])
 
-  // Start service if it is activated and has not been started yet.
+  // Start service if it has not been started yet.
   def startService(context: Context) =
     context.startService(intent(context))
 
