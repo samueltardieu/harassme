@@ -5,11 +5,9 @@ import java.util.Date
 
 trait LastCalls extends Prefs {
 
-  val context: Context
-
   private class Call(val number: String, val date: Date) {
 
-    def maxMilliseconds = minutesCount(context) * 60000
+    def maxMilliseconds = minutesCount * 60000
 
     def hasExpired =
       (new Date).getTime - date.getTime > maxMilliseconds
@@ -33,7 +31,7 @@ trait LastCalls extends Prefs {
   // the current one. It does not record the call.
   def shouldBeSignaled(number: String): Boolean = {
     cleanupList
-    lastCalls.count(_.number == number) >= callCount(context) - 1
+    lastCalls.count(_.number == number) >= callCount - 1
   }
 
   def recordMissedCall(number: String) =

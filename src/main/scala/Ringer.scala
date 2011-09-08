@@ -5,7 +5,7 @@ import android.media.{AudioManager, Ringtone, RingtoneManager}
 import android.media.AudioManager.{RINGER_MODE_NORMAL, STREAM_ALARM, STREAM_RING}
 import android.provider.Settings.System.DEFAULT_RINGTONE_URI
 
-trait Ringer extends Prefs {
+trait Ringer {
 
   val context: Context
 

@@ -4,17 +4,19 @@ import android.content.Context
 
 trait Prefs {
 
-  private def sp(context: Context) =
+  val context: Context
+
+  private lazy val sp =
     context.getSharedPreferences(Prefs.name, Context.MODE_PRIVATE)
 
-  def serviceActivated(context: Context) =
-    sp(context).getBoolean("serviceactivated", true)
+  def serviceActivated =
+    sp.getBoolean("serviceactivated", true)
 
-  def callCount(context: Context) =
-    sp(context).getString("callcount", "3").toInt
+  def callCount =
+    sp.getString("callcount", "3").toInt
 
-  def minutesCount(context: Context) =
-    sp(context).getString("minutescount", "3").toInt
+  def minutesCount =
+    sp.getString("minutescount", "3").toInt
 
 }
 

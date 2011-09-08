@@ -10,6 +10,8 @@ import ImplicitConversions._
 
 class PrefsActivity extends PreferenceActivity with Notification with Prefs {
 
+  val context = this
+
   def startService: Unit = {
     if (!HarassMeService.serviceRunning)
       short_toast(R.string.service_startup)
@@ -24,7 +26,7 @@ class PrefsActivity extends PreferenceActivity with Notification with Prefs {
 
   override def onCreate(savedInstanceState: Bundle) = {
     super.onCreate(savedInstanceState)
-    if (serviceActivated(this))
+    if (serviceActivated)
       startService
     addPreferencesFromResource(R.layout.preferences)
     findPreference("serviceactivated").setOnPreferenceChangeListener ({
