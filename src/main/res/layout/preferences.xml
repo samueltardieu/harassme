@@ -7,7 +7,8 @@
      android:key="serviceactivated"
      android:title="@string/activate_service"
      android:summaryOn="@string/service_on"
-     android:summaryOff="@string/service_off" />
+     android:summaryOff="@string/service_off"
+     android:defaultValue="true" />
   <PreferenceCategory android:title="@string/service_parameters">
   <EditTextPreference
      android:key="callcount"
@@ -26,4 +27,4 @@
      android:maxLength="2"
      android:defaultValue="3" />
   </PreferenceCategory>
-</PreferenceScreen> 
+</PreferenceScreen>
