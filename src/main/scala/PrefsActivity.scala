@@ -40,7 +40,7 @@ class PrefsActivity extends PreferenceActivity with Notification with Prefs {
 
   override def onPause = {
     super.onPause
-    android.app.backup.BackupManager.dataChanged(Prefs.appli)
+    Compatibility.dataChanged
   }
 
 }

@@ -6,8 +6,8 @@ import AndroidKeys._
 object General {
   val settings = Defaults.defaultSettings ++ Seq (
     name := "Harass Me",
-    version := "1.11",
-    versionCode := 111,
+    version := "1.12",
+    versionCode := 112,
     scalaVersion := "2.9.1",
     platformName in Android := "android-11"
   )
