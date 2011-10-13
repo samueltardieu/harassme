@@ -6,7 +6,8 @@ import AndroidKeys._
 object General {
   val settings = Defaults.defaultSettings ++ Seq (
     name := "Harass Me",
-    version := "1.10",
+    version := "1.11",
+    versionCode := 111,
     scalaVersion := "2.9.1",
     platformName in Android := "android-11"
   )
@@ -15,6 +16,7 @@ object General {
     General.settings ++
     AndroidProject.androidSettings ++
     TypedResources.settings ++
+    AndroidManifestGenerator.settings ++
     AndroidMarketPublish.settings ++ Seq (
       keyalias in Android := "rfc1149",
       libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test"
