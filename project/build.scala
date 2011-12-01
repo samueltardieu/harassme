@@ -9,7 +9,7 @@ object General {
     version := "1.13",
     versionCode := 113,
     scalaVersion := "2.9.1",
-    platformName in Android := "android-11"
+    platformName in Android := "android-14"
   )
 
   lazy val fullAndroidSettings =
