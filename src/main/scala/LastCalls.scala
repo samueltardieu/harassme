@@ -4,21 +4,27 @@ package listener
 import android.content.Context
 import java.util.Date
 
-trait LastCalls extends Prefs {
+object LastCalls extends {
 
   private class Call(val number: String, val date: Date) {
 
-    def maxMilliseconds = minutesCount * 60000
-
-    def hasExpired =
-      (new Date).getTime - date.getTime > maxMilliseconds
+    def hasExpired(expirationDate: Long) =
+      date.getTime < expirationDate
 
   }
 
+}
+
+trait LastCalls extends Prefs {
+
+  import LastCalls._
+
   private var lastCalls: List[Call] = Nil
 
-  private def cleanupList =
-    lastCalls = lastCalls.filter(!_.hasExpired)
+  private def cleanupList = {
+    val expirationDate = (new Date).getTime - minutesCount * 60000
+    lastCalls = lastCalls.filter(!_.hasExpired(expirationDate))
+  }
 
   private def rememberCall(c: Call) = {
     cleanupList
