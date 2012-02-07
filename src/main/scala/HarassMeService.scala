@@ -19,6 +19,8 @@ class HarassMeService extends Service {
     null
   }
 
+  override def onStartCommand(intent: Intent, flags: Int, startId: Int) = Service.START_STICKY
+
   override def onCreate() {
     HarassMeService.serviceStarted = true
     super.onCreate
