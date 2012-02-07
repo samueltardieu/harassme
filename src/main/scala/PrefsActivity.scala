@@ -1,5 +1,6 @@
 package net.rfc1149.harassme
- 
+package prefs
+
 import android.content.{Context, Intent, SharedPreferences}
 import android.os.Bundle
 import android.preference._
@@ -7,6 +8,9 @@ import android.view.View
 import android.widget.Toast
 
 import ImplicitConversions._
+
+import compatibility.Compatibility
+import service.HarassMeService
 
 class PrefsActivity extends PreferenceActivity with Notification with Prefs {
 

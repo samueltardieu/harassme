@@ -1,4 +1,5 @@
 package net.rfc1149.harassme
+package prefs
 
 import android.preference._
 

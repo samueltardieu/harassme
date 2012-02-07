@@ -1,8 +1,11 @@
 package net.rfc1149.harassme
+package service
 
 import android.app.Service
 import android.content.{Context, Intent}
 import android.telephony.{PhoneStateListener, TelephonyManager}
+
+import listener.HarassMeListener
 
 class HarassMeService extends Service {
 

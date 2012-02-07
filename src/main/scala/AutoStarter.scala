@@ -1,6 +1,9 @@
 package net.rfc1149.harassme
+package starter
 
-import android.content._
+import android.content.{BroadcastReceiver, Context, Intent}
+
+import service.HarassMeService
 
 class AutoStarter extends BroadcastReceiver {
 

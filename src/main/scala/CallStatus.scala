@@ -1,8 +1,9 @@
 package net.rfc1149.harassme
+package listener
 
 import android.telephony.{PhoneStateListener, TelephonyManager}
 
-class CallStatus extends PhoneStateListener {
+trait CallStatus extends PhoneStateListener {
 
   private var previousState = TelephonyManager.CALL_STATE_IDLE
   private var currentNumber = ""

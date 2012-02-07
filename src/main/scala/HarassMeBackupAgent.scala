@@ -1,4 +1,5 @@
 package net.rfc1149.harassme
+package backup
 
 import android.app.backup.{BackupAgentHelper, SharedPreferencesBackupHelper}
 
