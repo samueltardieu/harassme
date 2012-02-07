@@ -9,36 +9,37 @@ trait CallStatus extends PhoneStateListener {
   private var currentNumber = ""
   private var incomingCall = true
 
-  protected def onRing(incomingNumber: String) = {}
+  protected def onRing(incomingNumber: Option[String]) = {}
 
-  protected def onAnswer(incomingNumber: String) = {}
+  protected def onAnswer(incomingNumber: Option[String]) = {}
 
-  protected def onIncomingHangUp(incomingNumber: String) = {}
+  protected def onIncomingHangUp(incomingNumber: Option[String]) = {}
 
-  protected def onOutgoingHangUp(outgoingNumber: String) = {}
+  protected def onOutgoingHangUp(outgoingNumber: Option[String]) = {}
 
-  protected def onOutgoingCall(outgoingNumber: String) = {}
+  protected def onOutgoingCall(outgoingNumber: Option[String]) = {}
 
-  protected def onMissedCall(incomingNumber: String) = {}
+  protected def onMissedCall(incomingNumber: Option[String]) = {}
 
   override def onCallStateChanged(state: Int, phoneNumber: String) {
     import android.telephony.TelephonyManager._
+    val number = if (phoneNumber == null || phoneNumber.isEmpty) None else Some(phoneNumber)
     (previousState, state) match {
       case (CALL_STATE_IDLE, CALL_STATE_RINGING) =>
-	onRing(phoneNumber)
+	onRing(number)
 	incomingCall = true
       case (CALL_STATE_IDLE, CALL_STATE_OFFHOOK) =>
-	onOutgoingCall(phoneNumber)
+	onOutgoingCall(number)
 	incomingCall = false
       case (CALL_STATE_RINGING, CALL_STATE_OFFHOOK) =>
-	onAnswer(currentNumber)
+	onAnswer(number)
       case (CALL_STATE_RINGING, CALL_STATE_IDLE) =>
-	onMissedCall(currentNumber)
+	onMissedCall(number)
       case (CALL_STATE_OFFHOOK, CALL_STATE_IDLE) =>
 	if (incomingCall)
-	  onIncomingHangUp(currentNumber)
+	  onIncomingHangUp(number)
 	else
-	  onOutgoingHangUp(currentNumber)
+	  onOutgoingHangUp(number)
       case _ =>
     }
     currentNumber = phoneNumber
