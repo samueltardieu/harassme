@@ -1,36 +1,27 @@
 package net.rfc1149.harassme
-package listener
+package ringer
 
-import android.content.Context
-import android.media.{AudioManager, Ringtone, RingtoneManager}
-import android.media.AudioManager.{RINGER_MODE_NORMAL, STREAM_ALARM, STREAM_RING}
-import android.provider.Settings.System.DEFAULT_RINGTONE_URI
+import android.content.{Context, Intent}
+import android.media.AudioManager
 
-trait Ringer {
+import AudioManager.{RINGER_MODE_NORMAL, STREAM_RING}
 
-  val context: Context
+class Ringer(context: Context) {
 
   private val audioManager =
     context.getSystemService(Context.AUDIO_SERVICE).asInstanceOf[AudioManager]
 
-  private var currentlyPlaying: Option[Ringtone] = None
-
-  def isSilent =
+  private def isSilent =
     audioManager.getRingerMode != RINGER_MODE_NORMAL ||
     audioManager.getStreamVolume(STREAM_RING) == 0
 
-  def ringPhone {
-    if (isSilent) {
-      val r = RingtoneManager.getRingtone(context, DEFAULT_RINGTONE_URI)
-      r.setStreamType(STREAM_ALARM)
-      r.play
-      currentlyPlaying = Some(r)
-    }
-  }
+  private def intent = new Intent(context, classOf[RingerService])
 
-  def unringPhone = {
-    currentlyPlaying foreach (_.stop)
-    currentlyPlaying = None
-  }
+  def ringPhone =
+    if (isSilent)
+      context.startService(intent)
+
+  def unringPhone =
+    context.stopService(intent)
 
 }

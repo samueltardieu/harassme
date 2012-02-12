@@ -2,9 +2,7 @@ package net.rfc1149.harassme
 
 import android.content.Context
 
-trait Prefs {
-
-  val context: Context
+class Prefs(context: Context) {
 
   private lazy val sp =
     context.getSharedPreferences(Prefs.name, Context.MODE_PRIVATE)

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="service_startup">Service Harass Me démarré</string>
-    <string name="service_stop">Service Harass Me stoppé</string>
-
     <string name="activate_service">Activer le service</string>
     <string name="service_on">Surveillance des appels entrants activée</string>
     <string name="service_off">Service stoppé</string>

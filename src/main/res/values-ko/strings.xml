@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Translation provided by Ubinuri -->
 <resources>
-    <string name="service_startup">Harass Me 서비스 활성화됨</string>
-    <string name="service_stop">Harass Me 서비스 중지됨</string>
     <string name="activate_service">서비스 활성화</string>
     <string name="service_on">이 서비스는 걸려오는 전화를 감시합니다.</string>
     <string name="service_off">이 서비스는 실행되지 않습니다.</string>

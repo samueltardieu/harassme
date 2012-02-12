@@ -5,41 +5,18 @@ import android.content.{Context, Intent, SharedPreferences}
 import android.os.Bundle
 import android.preference._
 import android.view.View
-import android.widget.Toast
 
 import ImplicitConversions._
 
 import compatibility.Compatibility
-import service.HarassMeService
 
-class PrefsActivity extends PreferenceActivity with Notification with Prefs {
+class PrefsActivity extends PreferenceActivity {
 
   val context = this
 
-  def startService: Unit = {
-    if (!HarassMeService.serviceRunning)
-      short_toast(R.string.service_startup)
-    HarassMeService.startService(this)
-  }
-
-  def stopService: Unit = {
-    if (HarassMeService.serviceRunning)
-      short_toast(R.string.service_stop)
-    HarassMeService.stopService(this)
-  }
-
   override def onCreate(savedInstanceState: Bundle) = {
     super.onCreate(savedInstanceState)
-    if (serviceActivated)
-      startService
     addPreferencesFromResource(R.layout.preferences)
-    findPreference("serviceactivated").setOnPreferenceChangeListener ({
-      v : Any =>
-	if (v.asInstanceOf[Boolean])
-	  startService
-	else
-	  stopService
-    })
   }
 
   override def onPause = {

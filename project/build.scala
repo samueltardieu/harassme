@@ -17,9 +17,11 @@ object General {
     AndroidProject.androidSettings ++
     TypedResources.settings ++
     AndroidManifestGenerator.settings ++
-    AndroidMarketPublish.settings ++ Seq (
+    AndroidMarketPublish.settings ++
+    Seq (
       keyalias in Android := "rfc1149",
-      libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test"
+      libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test",
+      proguardOptimizations in Android := Seq("-optimizations !code/simplification/arithmetic")
     )
 }
 

@@ -17,13 +17,13 @@
       </intent-filter>
     </activity>
 
-    <service android:name=".service.HarassMeService"/>
-
-    <receiver android:name=".starter.AutoStarter">
+    <receiver android:name=".listener.HarassMeListener">
       <intent-filter>
-	<action android:name="android.intent.action.BOOT_COMPLETED"/>
+	<action android:name="android.intent.action.PHONE_STATE"/>
       </intent-filter>
     </receiver>
+
+    <service android:name=".ringer.RingerService"/>
 
     <meta-data android:name="com.google.android.backup.api_key"
 	       android:value="AEdPqrEAAAAI6cPv4jnLQ0Fr6vhzXr-qmvjMJR78KPzhUS9kNg" />
@@ -38,6 +38,7 @@
 
   <uses-feature android:name="android.hardware.telephony"/>
 
+  <uses-permission android:name="android.permission.READ_CONTACTS"/>
   <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
 </manifest>

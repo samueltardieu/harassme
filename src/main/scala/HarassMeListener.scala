@@ -1,24 +1,32 @@
 package net.rfc1149.harassme
 package listener
 
-import android.content.Context
-import android.media.AudioManager
+import android.content.{BroadcastReceiver, Context, Intent}
+import android.telephony.{PhoneStateListener, TelephonyManager}
 
-class HarassMeListener (val context: Context)
-extends CallStatus with LastCalls with Ringer {
+import ringer.Ringer
 
-  override def onAnswer(incomingNumber: Option[String]) = {
-    unringPhone
-    resetCalls
-  }
+class HarassMeListener extends BroadcastReceiver {
 
-  override def onRing(incomingNumber: Option[String]) =
-    if (incomingNumber.map(shouldBeSignaled(_)) getOrElse false)
-      ringPhone
+  import TelephonyManager._
 
-  override def onMissedCall(incomingNumber: Option[String]) = {
-    unringPhone
-    incomingNumber.foreach(recordMissedCall(_))
+  private def ringer(context: Context) = new Ringer(context)
+
+  override def onReceive(context: Context, intent: Intent) {
+    val extras = intent.getExtras
+    val state = extras.getString(EXTRA_STATE)
+    val number = extras.getString(EXTRA_INCOMING_NUMBER) match {
+	case null  => None
+	case ""    => None
+	case other => Some(other)
+    }
+    state match {
+	case EXTRA_STATE_RINGING =>
+	  if (number.map(LastCalls.shouldBeSignaled(context, _)) getOrElse false)
+	    ringer(context).ringPhone
+	case _ =>
+	  ringer(context).unringPhone
+    }
   }
 
 }

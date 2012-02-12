@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Harass Me</string>
-    <string name="service_startup">Harass Me service activated</string>
-    <string name="service_stop">Harass Me service stopped</string>
 
     <string name="activate_service">Activate service</string>
     <string name="service_on">The service will watch incoming calls</string>
