@@ -9,8 +9,10 @@ object MissedCalls {
   private def lastAnsweredCallFrom(resolver: ContentResolver, number: String): Option[Long] = {
     val c = resolver.query(Calls.CONTENT_URI,
 			   Array(Calls.DATE),
-			   "Calls.NUMBER=? AND Calls.TYPE=1", Array(number),
-			   "Calls.DATE DESC")
+			   Calls.NUMBER + "=? AND " +
+			   Calls.TYPE + "=1",
+			   Array(number),
+			   Calls.DATE + " DESC")
     if (c == null || c.getCount < 1)
       None
     else {
@@ -22,7 +24,10 @@ object MissedCalls {
   private def missedCallsSince(resolver: ContentResolver, number: String, since: Long): Int = {
     val c = resolver.query(Calls.CONTENT_URI,
 			   Array(Calls.DATE),
-			   "Calls.NUMBER=? AND Calls.TYPE=3 AND Calls.DATE>?", Array(number, since.toString),
+			   Calls.NUMBER + "=? AND " +
+			   Calls.TYPE + "=3 AND " +
+			   Calls.DATE + ">?",
+			   Array(number, since.toString),
 			   null)
     c.getCount
   }
