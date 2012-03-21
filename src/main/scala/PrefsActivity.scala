@@ -16,6 +16,7 @@ class PrefsActivity extends PreferenceActivity {
 
   override def onCreate(savedInstanceState: Bundle) = {
     super.onCreate(savedInstanceState)
+    Prefs.restoreDefaultPreferences(this)
     addPreferencesFromResource(R.xml.preferences)
   }
 

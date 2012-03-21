@@ -1,6 +1,7 @@
 package net.rfc1149.harassme
 
 import android.content.Context
+import android.preference._
 
 class Prefs(context: Context) {
 
@@ -16,6 +17,8 @@ class Prefs(context: Context) {
   def minutesCount =
     sp.getString("minutescount", "3").toInt
 
+  Prefs.restoreDefaultPreferences(context)
+
 }
 
 object Prefs {
@@ -25,5 +28,10 @@ object Prefs {
   val name = appli + "_preferences"
 
   val backupKey = "prefs"
+
+  def restoreDefaultPreferences(context: Context) {
+    PreferenceManager.setDefaultValues(context, Prefs.name, Context.MODE_PRIVATE,
+				       R.xml.preferences, false)
+  }
 
 }
