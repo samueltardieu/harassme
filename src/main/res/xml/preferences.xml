@@ -10,21 +10,21 @@
   <PreferenceCategory
       android:title="@string/service_parameters"
       android:dependency="serviceactivated">
-    <EditTextPreference
+    <ListPreference
 	android:key="callcount"
 	android:dependency="serviceactivated"
 	android:title="@string/callcount"
 	android:summary="@string/callcount_summary"
-	android:numeric="integer"
-	android:maxLength="2"
+	android:entries="@array/callcount"
+	android:entryValues="@array/callcount"
 	android:defaultValue="3" />
-    <EditTextPreference
+    <ListPreference
 	android:key="minutescount"
 	android:dependency="serviceactivated"
 	android:title="@string/minutescount"
 	android:summary="@string/minutescount_summary"
-	android:numeric="integer"
-	android:maxLength="2"
+	android:entries="@array/minutescount"
+	android:entryValues="@array/minutescount"
 	android:defaultValue="3" />
   </PreferenceCategory>
 </PreferenceScreen>

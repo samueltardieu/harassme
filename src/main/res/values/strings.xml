@@ -11,4 +11,21 @@
     <string name="minutescount_summary">Maximum delay in minutes between
       the first and latest call</string>
 
+    <string-array name="callcount">
+      <item>1</item>
+      <item>2</item>
+      <item>3</item>
+      <item>4</item>
+      <item>5</item>
+    </string-array>
+
+    <string-array name="minutescount">
+      <item>1</item>
+      <item>2</item>
+      <item>3</item>
+      <item>4</item>
+      <item>5</item>
+      <item>10</item>
+    </string-array>
+
 </resources>
