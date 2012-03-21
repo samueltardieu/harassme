@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="activate_service">Activer le service</string>
+    <string name="service_on">Surveillance des appels entrants activée</string>
+    <string name="service_off">Service stoppé</string>
     <string name="service_parameters">Paramètres du service</string>
     <string name="callcount">Nombre d’appels</string>
     <string name="callcount_summary">Le service ne se déclenchera pas avant

@@ -3,9 +3,11 @@
 <PreferenceScreen
    xmlns:android="http://schemas.android.com/apk/res/android"
    android:key="main_preferencescreen">
-  <SwitchPreference
+  <CheckBoxPreference
      android:key="serviceactivated"
      android:title="@string/activate_service"
+     android:summaryOn="@string/service_on"
+     android:summaryOff="@string/service_off"
      android:defaultValue="true" />
   <PreferenceCategory
       android:title="@string/service_parameters"

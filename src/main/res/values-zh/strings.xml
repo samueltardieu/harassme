@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">骚扰我</string>
     <string name="activate_service">激活服务</string>
+    <string name="service_on">这个服务将监视呼入电话</string>
+    <string name="service_off">该服务将无法运行</string>
     <string name="service_parameters">服务参数</string>
     <string name="callcount">呼叫号码</string>
     <string name="callcount_summary">该服务将不会触发之前的呼叫号码</string>
