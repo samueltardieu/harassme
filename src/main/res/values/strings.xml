@@ -3,8 +3,6 @@
     <string name="app_name">Harass Me</string>
 
     <string name="activate_service">Activate service</string>
-    <string name="service_on">The service will watch incoming calls</string>
-    <string name="service_off">The service will not run</string>
     <string name="service_parameters">Service parameters</string>
     <string name="callcount">Number of calls</string>
     <string name="callcount_summary">The service will not trigger before

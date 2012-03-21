@@ -3,28 +3,28 @@
 <PreferenceScreen
    xmlns:android="http://schemas.android.com/apk/res/android"
    android:key="main_preferencescreen">
-  <CheckBoxPreference
+  <SwitchPreference
      android:key="serviceactivated"
      android:title="@string/activate_service"
-     android:summaryOn="@string/service_on"
-     android:summaryOff="@string/service_off"
      android:defaultValue="true" />
-  <PreferenceCategory android:title="@string/service_parameters">
-  <EditTextPreference
-     android:key="callcount"
-     android:dependency="serviceactivated"
-     android:title="@string/callcount"
-     android:summary="@string/callcount_summary"
-     android:numeric="integer"
-     android:maxLength="2"
-     android:defaultValue="3" />
-  <EditTextPreference
-     android:key="minutescount"
-     android:dependency="serviceactivated"
-     android:title="@string/minutescount"
-     android:summary="@string/minutescount_summary"
-     android:numeric="integer"
-     android:maxLength="2"
-     android:defaultValue="3" />
+  <PreferenceCategory
+      android:title="@string/service_parameters"
+      android:dependency="serviceactivated">
+    <EditTextPreference
+	android:key="callcount"
+	android:dependency="serviceactivated"
+	android:title="@string/callcount"
+	android:summary="@string/callcount_summary"
+	android:numeric="integer"
+	android:maxLength="2"
+	android:defaultValue="3" />
+    <EditTextPreference
+	android:key="minutescount"
+	android:dependency="serviceactivated"
+	android:title="@string/minutescount"
+	android:summary="@string/minutescount_summary"
+	android:numeric="integer"
+	android:maxLength="2"
+	android:defaultValue="3" />
   </PreferenceCategory>
 </PreferenceScreen>
