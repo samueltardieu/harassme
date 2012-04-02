@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Harass Me</string>
+	<string name="activate_service">Ativar serviço</string>
+	<string name="service_on">O serviço irá monitorizar chamadas recebidas</string>
+	<string name="service_off">O serviço será desativado</string>
+	<string name="service_parameters">Parâmetros do serviço</string>
+	<string name="callcount">Número de chamadas</string>
+	<string name="callcount_summary">O serviço não será ativado antes 
+deste número de chamadas</string>
+	<string name="minutescount">Máximo de minutos</string>
+	<string name="minutescount_summary">Atraso máximo, em minutos, entre 
+a primeira e a última chamada</string>
+</resources>

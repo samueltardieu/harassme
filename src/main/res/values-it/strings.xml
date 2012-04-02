@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Infastidiscimi</string>
+	<string name="activate_service">Attivare il servizio</string>
+	<string name="service_on">Il servizio controllerà le chiamate in arrivo</string>
+	<string name="service_off">Il servizio non sarà attivato</string>
+	<string name="service_parameters">Parametri del servizio</string>
+	<string name="callcount">Numero di chiamate</string>
+	<string name="callcount_summary">Il servizio non sarà attivato prima di aver ricevuto
+questo numero di chiamate</string>
+	<string name="minutescount">Massimo di minuti </string>
+	<string name="minutescount_summary">Massima attesa in minuti tra
+la prima e l\'ultima chiamata</string>
+</resources>

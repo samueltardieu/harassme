@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Chikanere Mig</string>
+	<string name="activate_service">Aktivere Service</string>
+	<string name="service_on">Denne tjeneste vil holde øje med opkald</string>
+	<string name="service_off">Denne Tjeneste vil ikke køre</string>
+	<string name="service_parameters">Tjeneste parameter</string>
+	<string name="callcount">Antal af opkald</string>
+	<string name="callcount_summary">Denne tjeneste vil ikke aktivere før, denne mængde opkald</string>
+	<string name="minutescount">Max minutter</string>
+	<string name="minutescount_summary">Maksimum forsinkelse i minutter mellem det første og sidste opkald</string>
+</resources>

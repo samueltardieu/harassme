@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Dręcz Mnie</string>
+	<string name="activate_service">Aktywuj usługę</string>
+	<string name="service_on">Usługa będzie obserwować przychodzące połączenia</string>
+	<string name="service_off">Usługa będzie nie aktywna</string>
+	<string name="service_parameters">Parametry usługi</string>
+	<string name="callcount">Ilość połączeń</string>
+	<string name="callcount_summary">Usługa nie włączy sie poniżej
+tej ilości połączeń</string>
+	<string name="minutescount">Maksimum minut</string>
+	<string name="minutescount_summary">Maksymalne opóźnienie w minutach między
+pierwszym a ostatnim połączeniem</string>
+</resources>

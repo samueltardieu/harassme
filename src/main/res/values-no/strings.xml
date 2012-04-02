@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Trakassere Meg</string>
+	<string name="activate_service">Aktiver tjenesten</string>
+	<string name="service_on">Denne tjenesten vil se på innkommende anrop</string>
+	<string name="service_off">Tjenesten vil ikke kjøre</string>
+	<string name="service_parameters">Tjeneste parametere</string>
+	<string name="callcount">Antall samtaler</string>
+	<string name="callcount_summary">Tjenesten vil ikke starte før 
+dette nummeret av samtaler er nådd</string>
+	<string name="minutescount">Maks minutter</string>
+	<string name="minutescount_summary">Maks forsinkelse i minutter mellom
+den første og siste samtale</string>
+</resources>
