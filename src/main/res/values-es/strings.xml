@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Acosame</string>
+	<string name="activate_service">Activar el servicio</string>
+	<string name="service_on">El servicio supervisará las llamadas entrantes</string>
+	<string name="service_off">El servicio será desactivado</string>
+	<string name="service_parameters">Parámetros de servicio</string>
+	<string name="callcount">Número de llamadas</string>
+	<string name="callcount_summary">El servicio no se activará antes de este
+número de llamadas</string>
+	<string name="minutescount">Máximo de minutos</string>
+	<string name="minutescount_summary">Plazo máximo en minutos entre la
+primera y la última llamada</string>
+</resources>
