@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Harass Me</string>
+	<string name="activate_service">فعال کردن سرویس</string>
+	<string name="service_on">این سرویس به تماس‌ها با شما نظارت می‌کند</string>
+	<string name="service_off">این سرویس خاموش است</string>
+	<string name="service_parameters">تنظیمات سرویس</string>
+	<string name="callcount">تعداد تماس ها</string>
+	<string name="callcount_summary">این سرویس قبل از این تعداد
+تماس فعال نخواهد شد</string>
+	<string name="minutescount">حد اکثر دقایق</string>
+	<string name="minutescount_summary">حد اکثر دقایق بین اولین
+ و آخرین تماس</string>
+</resources>
