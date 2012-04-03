@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Truflaðu mig</string>
+	<string name="activate_service">Virkja þjónustu</string>
+	<string name="service_on">Þjónustan mun fylgjast með komandi símtölum</string>
+	<string name="service_off">Þjónustan mun ekki keyra</string>
+	<string name="service_parameters">Þjónustu takmörk</string>
+	<string name="callcount">Fjöldi símtala</string>
+	<string name="callcount_summary">Þjónustan mun ekki fara af stað fyrir þessa tölu af símtölum</string>
+	<string name="minutescount">Mínútu hámark</string>
+	<string name="minutescount_summary">Hámarsk bið í mínútum milli fyrsta og síðasta símtals</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">תציק לי</string>
+	<string name="activate_service">התחל שירות</string>
+	<string name="service_on">השירות לא ינתב שיחות נכנסות</string>
+	<string name="service_off">השירות כבוי</string>
+	<string name="service_parameters">ערכי השירות</string>
+	<string name="callcount">מספר שיחות</string>
+	<string name="callcount_summary">השירות לא יתחיל 
+לפני מספר השיחות</string>
+	<string name="minutescount">מספר דקות מקסימלי</string>
+	<string name="minutescount_summary">השעיה מקסימלית בדקות
+בין השיחה הראשונה והאחרונה</string>
+</resources>
