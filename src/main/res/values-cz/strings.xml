@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Harass Me</string>
+	<string name="activate_service">Aktivovat program</string>
+	<string name="service_on">Program bude sledovat příchozí volání</string>
+	<string name="service_off">Program nebude spuštěn</string>
+	<string name="service_parameters">Parametry programu</string>
+	<string name="callcount">Počet volání</string>
+	<string name="callcount_summary">Program se neaktivuje dokud nebude
+dosaženo tohoto počtu volání</string>
+	<string name="minutescount">Maximální počet minut</string>
+	<string name="minutescount_summary">Maximální prodleva mezi prvním
+a posledním voláním v minutách</string>
+</resources>
