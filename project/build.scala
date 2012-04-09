@@ -20,7 +20,6 @@ object General {
     AndroidMarketPublish.settings ++
     Seq (
       keyalias in Android := "rfc1149",
-      libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test",
       proguardOption in Android := "-keep public class net.rfc1149.harassme.backup.HarassMeBackupAgent -printseeds target/seeds.txt",
       proguardOptimizations in Android := Seq("-optimizations !code/simplification/arithmetic")
     )
