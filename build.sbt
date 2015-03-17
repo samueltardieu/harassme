@@ -15,3 +15,9 @@ proguardOptions in Android ++= Seq("-dontobfuscate", "-dontoptimize", "-keepattr
 )
 
 scalacOptions in Compile ++= Seq("-feature", "-deprecation")
+
+apkSigningConfig in Android <<= (properties in Android) { props =>
+  for (store <- some(props.getProperty("key.store"));
+       alias <- some(props.getProperty("key.alias")))
+    yield android.PromptStorepassSigningConfig(new File(store), alias)
+}

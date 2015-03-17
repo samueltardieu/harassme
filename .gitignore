@@ -7,4 +7,4 @@ project/plugins/project
 src_managed
 lib_managed
 R.java
-private.properties
+local.properties
