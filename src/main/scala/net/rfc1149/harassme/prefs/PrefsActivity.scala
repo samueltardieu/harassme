@@ -15,9 +15,9 @@ class PrefsActivity extends PreferenceActivity {
     addPreferencesFromResource(R.xml.preferences)
   }
 
-  override def onPause = {
-    super.onPause
-    Compatibility.dataChanged
+  override def onPause() = {
+    super.onPause()
+    Compatibility.dataChanged()
   }
 
 }

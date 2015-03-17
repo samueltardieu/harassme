@@ -5,7 +5,7 @@ object Compatibility {
 
   // Call Android facilities in a backward compatible way
 
-  def dataChanged =
+  def dataChanged() =
     try {
       val cl = Class.forName("android.app.backup.BackupManager")
       val m = cl.getDeclaredMethod("dataChanged", classOf[String])

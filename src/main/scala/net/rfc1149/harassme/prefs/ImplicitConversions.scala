@@ -6,14 +6,10 @@ import scala.language.implicitConversions
 
 object ImplicitConversions {
 
-  implicit def toOnPreferenceChangeListener
-      (f : Any => _) : Preference.OnPreferenceChangeListener = {
-    new Preference.OnPreferenceChangeListener {
-      override def onPreferenceChange(preference : Preference,
-				      newValue : Object) = {
-	f(newValue)
-	true
-      }
+  implicit class toOnPreferenceChangeListener(f : Any => _) extends Preference.OnPreferenceChangeListener {
+    override def onPreferenceChange(preference : Preference, newValue : Object) = {
+      f(newValue)
+      true
     }
   }
 

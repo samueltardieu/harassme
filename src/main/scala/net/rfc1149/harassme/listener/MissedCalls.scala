@@ -6,7 +6,7 @@ import android.provider.CallLog.Calls
 
 object MissedCalls {
 
-  private def lastAnsweredCallFrom(resolver: ContentResolver, number: String): Option[Long] = {
+  private[this] def lastAnsweredCallFrom(resolver: ContentResolver, number: String): Option[Long] = {
     val c = resolver.query(Calls.CONTENT_URI,
 			   Array(Calls.DATE),
 			   Calls.NUMBER + "=? AND " +
@@ -21,7 +21,7 @@ object MissedCalls {
     }
   }
 
-  private def missedCallsSince(resolver: ContentResolver, number: String, since: Long): Int = {
+  private[this] def missedCallsSince(resolver: ContentResolver, number: String, since: Long): Int = {
     val c = resolver.query(Calls.CONTENT_URI,
 			   Array(Calls.DATE),
 			   Calls.NUMBER + "=? AND " +

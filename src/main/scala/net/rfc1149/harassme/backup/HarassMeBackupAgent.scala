@@ -5,8 +5,7 @@ import android.app.backup.{BackupAgentHelper, SharedPreferencesBackupHelper}
 
 class HarassMeBackupAgent extends BackupAgentHelper {
 
-  override def onCreate(): Unit =
-    addHelper(Prefs.backupKey,
-              new SharedPreferencesBackupHelper(this, Prefs.name))
+  override def onCreate() =
+    addHelper(Prefs.backupKey, new SharedPreferencesBackupHelper(this, Prefs.name))
 
 }

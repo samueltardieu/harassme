@@ -8,20 +8,20 @@ import AudioManager.{RINGER_MODE_NORMAL, STREAM_RING}
 
 class Ringer(context: Context) {
 
-  private val audioManager =
+  private[this] val audioManager =
     context.getSystemService(Context.AUDIO_SERVICE).asInstanceOf[AudioManager]
 
-  private def isSilent =
+  private[this] def isSilent =
     audioManager.getRingerMode != RINGER_MODE_NORMAL ||
     audioManager.getStreamVolume(STREAM_RING) == 0
 
-  private def intent = new Intent(context, classOf[RingerService])
+  private[this] def intent = new Intent(context, classOf[RingerService])
 
-  def ringPhone =
+  def ringPhone() =
     if (isSilent)
       context.startService(intent)
 
-  def unringPhone =
+  def unringPhone() =
     context.stopService(intent)
 
 }

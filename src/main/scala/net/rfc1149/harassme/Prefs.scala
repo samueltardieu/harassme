@@ -5,17 +5,13 @@ import android.preference._
 
 class Prefs(context: Context) {
 
-  private lazy val sp =
-    context.getSharedPreferences(Prefs.name, Context.MODE_PRIVATE)
+  private[this] lazy val sp = context.getSharedPreferences(Prefs.name, Context.MODE_PRIVATE)
 
-  def serviceActivated =
-    sp.getBoolean("serviceactivated", true)
+  def serviceActivated = sp.getBoolean("serviceactivated", true)
 
-  def callCount =
-    sp.getString("callcount", "3").toInt
+  def callCount = sp.getString("callcount", "3").toInt
 
-  def minutesCount =
-    sp.getString("minutescount", "3").toInt
+  def minutesCount = sp.getString("minutescount", "3").toInt
 
   Prefs.restoreDefaultPreferences(context)
 
