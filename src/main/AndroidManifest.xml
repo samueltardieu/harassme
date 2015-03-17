@@ -2,9 +2,11 @@
    package="net.rfc1149.harassme"
    xmlns:android="http://schemas.android.com/apk/res/android"
    android:installLocation="internalOnly"
+   android:versionName="1.23"
+   android:versionCode="123"
 >
 
-  <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="15"/>
+  <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="22"/>
 
   <supports-screens
      android:largeScreens="true"

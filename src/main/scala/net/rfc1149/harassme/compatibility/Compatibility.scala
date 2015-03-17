@@ -11,7 +11,7 @@ object Compatibility {
       val m = cl.getDeclaredMethod("dataChanged", classOf[String])
       m.invoke(null, Prefs.appli)
     } catch {
-      case _ =>
+      case _: Exception =>
 	// Do nothing if this method is not available (older SDK)
     }
 

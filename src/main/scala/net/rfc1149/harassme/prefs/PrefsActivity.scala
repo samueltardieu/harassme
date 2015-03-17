@@ -1,14 +1,9 @@
 package net.rfc1149.harassme
 package prefs
 
-import android.content.{Context, Intent, SharedPreferences}
 import android.os.Bundle
 import android.preference._
-import android.view.View
-
-import ImplicitConversions._
-
-import compatibility.Compatibility
+import net.rfc1149.harassme.compatibility.Compatibility
 
 class PrefsActivity extends PreferenceActivity {
 
