@@ -8,3 +8,5 @@ src_managed
 lib_managed
 R.java
 local.properties
+.idea
+crowdin.yaml
