@@ -1,5 +1,4 @@
 package net.rfc1149.harassme
-package compatibility
 
 object Compatibility {
 
@@ -12,7 +11,7 @@ object Compatibility {
       m.invoke(null, Prefs.appli)
     } catch {
       case _: Exception =>
-	// Do nothing if this method is not available (older SDK)
+      // Do nothing if this method is not available (older SDK)
     }
 
 }

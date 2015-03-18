@@ -25,9 +25,7 @@ object Prefs {
 
   val backupKey = "prefs"
 
-  def restoreDefaultPreferences(context: Context) {
-    PreferenceManager.setDefaultValues(context, Prefs.name, Context.MODE_PRIVATE,
-				       R.xml.preferences, false)
-  }
+  def restoreDefaultPreferences(implicit context: Context) =
+    PreferenceManager.setDefaultValues(context, Prefs.name, Context.MODE_PRIVATE, R.xml.preferences, false)
 
 }

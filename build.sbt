@@ -10,9 +10,19 @@ scalaVersion := "2.11.6"
 
 proguardOptions in Android ++= Seq("-dontobfuscate", "-dontoptimize", "-keepattributes Signature",
   "-printseeds target/seeds.txt", "-printusage target/usage.txt",
-  "-keep public class net.rfc1149.harassme.backup.HarassMeBackupAgent",
+  "-keep public class net.rfc1149.harassme.HarassMeBackupAgent",
   "-dontwarn scala.collection.**" // required from Scala 2.11.4
 )
+
+proguardCache in Android ++= Seq(
+  ProguardCache("org.scaloid") % "org.scaloid"
+)
+
+libraryDependencies += "org.scaloid" %% "scaloid" % "3.6.1-10" withSources() withJavadoc()
+
+run <<= run in Android
+
+install <<= install in Android
 
 scalacOptions in Compile ++= Seq("-feature", "-deprecation")
 

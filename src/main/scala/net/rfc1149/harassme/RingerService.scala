@@ -1,13 +1,13 @@
 package net.rfc1149.harassme
-package ringer
 
 import android.app.Service
 import android.content.Intent
 import android.media.AudioManager.STREAM_ALARM
 import android.media.{Ringtone, RingtoneManager}
 import android.provider.Settings.System.DEFAULT_RINGTONE_URI
+import org.scaloid.common.SService
 
-class RingerService extends Service {
+class RingerService extends SService {
 
   private[this] var currentlyPlaying: Option[Ringtone] = None
 
@@ -30,7 +30,7 @@ class RingerService extends Service {
     Service.START_STICKY
   }
 
-  override def onDestroy() = unringPhone()
+  onDestroy { unringPhone() }
 
   override def onBind(intent: Intent) = null
 
