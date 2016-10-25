@@ -15,7 +15,8 @@ class HarassMeListener extends BroadcastReceiver {
     val extras = intent.getExtras
     extras.getString(EXTRA_STATE) match {
       case EXTRA_STATE_RINGING =>
-        val number = Option(extras.getString(EXTRA_INCOMING_NUMBER)).filterNot(_.isEmpty)
+        // Believe it or not, java.lang.String#isEmpty is not available for API < 9.
+        val number = Option(extras.getString(EXTRA_INCOMING_NUMBER)).filterNot(_.length == 0)
         if (number.exists(shouldBeSignaled) && isSilent)
           context.startService(SIntent[RingerService])
       case _ =>
