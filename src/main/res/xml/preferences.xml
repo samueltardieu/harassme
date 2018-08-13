@@ -13,20 +13,26 @@
       android:title="@string/service_parameters"
       android:dependency="serviceactivated">
     <ListPreference
-	android:key="callcount"
-	android:dependency="serviceactivated"
-	android:title="@string/callcount"
-	android:summary="@string/callcount_summary"
-	android:entries="@array/callcount"
-	android:entryValues="@array/callcount"
-	android:defaultValue="3" />
+	    android:key="callcount"
+	    android:dependency="serviceactivated"
+	    android:title="@string/callcount"
+	    android:summary="@string/callcount_summary"
+	    android:entries="@array/callcount"
+	    android:entryValues="@array/callcount"
+	    android:defaultValue="3" />
     <ListPreference
-	android:key="minutescount"
-	android:dependency="serviceactivated"
-	android:title="@string/minutescount"
-	android:summary="@string/minutescount_summary"
-	android:entries="@array/minutescount"
-	android:entryValues="@array/minutescount"
-	android:defaultValue="3" />
+	    android:key="minutescount"
+	    android:dependency="serviceactivated"
+	    android:title="@string/minutescount"
+	    android:summary="@string/minutescount_summary"
+	    android:entries="@array/minutescount"
+	    android:entryValues="@array/minutescount"
+	    android:defaultValue="3" />
   </PreferenceCategory>
+  <Preference
+      android:key="pref_static_field_key"
+      android:selectable="false"
+      android:persistent="false"
+      android:title="@string/privacy_policy"
+      android:summary="@string/privacy_policy_link"/>
 </PreferenceScreen>
